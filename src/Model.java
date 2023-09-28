@@ -17,28 +17,26 @@ public class Model {
         }
     }
 
-    public String getScene(int id) {
-        return arrObj[id].get("text").getAsString();
+    public JsonObject getScene(int id) {
+        //return arrObj[id].get("text").getAsString();
+        return arrObj[id];
     }
 
-    public String getChoices(int id) {
+    /*
+    public String getChoice(int id, int i) {
         JsonArray options = arrObj[id].get("options").getAsJsonArray();
-        JsonObject option;
-        String optionText = "";
-        int optionNext;
-
-        for (int i = 0; i < options.size(); i++) {
-            option = options.get(i).getAsJsonObject();
-            optionText = option.get("msg").getAsString();
-            optionNext = option.get("nextId").getAsInt();
-
-            System.out.println(i+1 + ". " + optionText);
-        }
-
-        // scanner in here??? to return chosen option
+        JsonObject option = options.get(i).getAsJsonObject();
+        String optionText = option.get("msg").getAsString();
 
         return optionText;
     }
 
+    public int getNextChoice(int id, int i) {
+        JsonArray options = arrObj[id].get("options").getAsJsonArray();
+        JsonObject option = options.get(i).getAsJsonObject();
+        int optionNext = option.get("nextId").getAsInt();
 
+        return optionNext;
+    }
+    */
 }
