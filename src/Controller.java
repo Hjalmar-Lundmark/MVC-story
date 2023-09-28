@@ -8,6 +8,7 @@ public class Controller {
 
     public Controller(Model theModel) {
         this.theModel = theModel;
+        play();
     }
 
     public void play() {
@@ -46,6 +47,6 @@ public class Controller {
     public static void main(String[] args) {
         Model theModel = new Model("story.json");
         Controller theController = new Controller(theModel);
-        theController.play();
+        // ask for restart controller, restarting the program
     }
 }
