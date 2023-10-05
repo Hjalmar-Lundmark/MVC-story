@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Scene {
     private int id;
     private String story;
-    private ArrayList<String> choices;
-    private ArrayList<Integer> nextId;
+    private ArrayList<String> choices = new ArrayList<>();
+    private ArrayList<Integer> nextId = new ArrayList<>();
 
     public Scene(JsonObject json) {
         this.id = json.get("id").getAsInt();
@@ -26,9 +26,13 @@ public class Scene {
         this.story = JOptionPane.showInputDialog("Skriv din story pls");
         int amount = Integer.parseInt(JOptionPane.showInputDialog("Hur många alternativ behöver du?"));
         for (int i = 0; i < amount; i++) {
-            this.choices.add(JOptionPane.showInputDialog("Alternativ nr " + i));
+            this.choices.add(JOptionPane.showInputDialog("Alternativ nr " + i+1 + "?"));
             this.nextId.add(i + 10); // idk
         }
+    }
+
+    public static void main(String[] args) {
+        Scene test = new Scene(0);
     }
 
     public int getId() {
